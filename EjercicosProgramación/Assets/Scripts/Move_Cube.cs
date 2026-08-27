@@ -4,13 +4,26 @@ public class Move_Cube : MonoBehaviour
 {
     public GameObject[] waypoints;
 
-    public float speed = 2;
+    public float platformSpeed = 2;
 
     private int waypointsIndex = 0;
-
    
     void Update()
     {
-        transform.position += Vector3.forward * speed * Time.deltaTime;
+        MovePlatform();
+    }
+
+    void MovePlatform()
+    {
+        if (Vector3.Distance(transform.position, waypoints[waypointsIndex].transform.position)<0.1f)
+        {
+            waypointsIndex++;
+            if (waypointsIndex >= waypoints.Length)
+            {
+                waypointsIndex = 0;
+            }
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointsIndex].transform.position, platformSpeed*Time.deltaTime);
     }
 }
