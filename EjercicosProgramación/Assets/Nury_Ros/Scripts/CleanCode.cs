@@ -7,7 +7,7 @@ public class CleanCode : MonoBehaviour
     [SerializeField] private float _movementSpeed=5f;
 
     //2
-    public float PlayerLevel;
+    public int PlayerLevel;
 
     //3
     protected float _baseDamage=10f;
@@ -19,10 +19,50 @@ public class CleanCode : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
 
     //6
-    bool 
+    private bool _isAlive;
 
+    //7
+    internal int[] index=new int[4];
 
-    
+    //8
+    [SerializeField][Range(0,100)] private float _damageRange;
+
+    //9
+    public string PlayerName;
+
+    //10
+    protected float movementSpeed;
+
+    //11
+    [HideInInspector] private MeshRenderer _meshRenderer;
+
+    //12
+    [SerializeField][Tooltip("Helps control game volume")] private float _gameVolume;
+
+    //13
+    private bool _canAttack;
+
+    //14
+    public static GameManager Instance;
+
+    //15
+    private List<object> _inventoryObjects;
+
+    //16
+    [FormerlySerializedAs("_speed")][SerializeField] private float _playerSpeed;
+
+    //17
+    private Vector3 _playerPosition;
+
+    //18
+    public int MaxPlayers=50;
+
+    //19
+    [SerializeField] protected float _distanceDetectionOfEnemy;
+
+    //20
+    [SerializeField] private AudioSource _audioSource;
+
     void Start()
     {
         
