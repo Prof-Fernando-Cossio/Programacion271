@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -25,7 +26,7 @@ public class Excercise_01_CR : MonoBehaviour
     private bool _isDead = false;
 
     //7.
-    protected List _saveIndex;
+    protected int _saveIndex;
 
     //8.
     [UnityEngine.Range(0f, 100f)]
@@ -54,7 +55,7 @@ public class Excercise_01_CR : MonoBehaviour
     }
 
     //15.
-    private List _itemList;
+    private List _itemList = new List();
 
     //16.
     [FormerlySerializedAs("_speed")]
@@ -64,7 +65,7 @@ public class Excercise_01_CR : MonoBehaviour
     private Vector3 _playerPosition;
 
     //18.
-    internal int LimitOfPlayers;
+    public int MaxPlayers;
 
     //19.
     [SerializeField] protected float _enemyDetection;
