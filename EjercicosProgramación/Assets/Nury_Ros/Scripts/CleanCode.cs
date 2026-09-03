@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CleanCode : MonoBehaviour
 {
-    
+   /* 
     //1
     [SerializeField] private float _movementSpeed=5f;
 
@@ -22,7 +22,7 @@ public class CleanCode : MonoBehaviour
     private bool _isAlive;
 
     //7
-    internal int[] index=new int[4];
+    internal int _index;
 
     //8
     [SerializeField][Range(0,100)] private float _damageRange;
@@ -31,10 +31,10 @@ public class CleanCode : MonoBehaviour
     public string PlayerName;
 
     //10
-    protected float movementSpeed;
+    protected float _movementSpeed;
 
     //11
-    [HideInInspector] private MeshRenderer _meshRenderer;
+    private MeshRenderer _meshRenderer;
 
     //12
     [SerializeField][Tooltip("Helps control game volume")] private float _gameVolume;
@@ -46,7 +46,7 @@ public class CleanCode : MonoBehaviour
     public static GameManager Instance;
 
     //15
-    private List<object> _inventoryObjects;
+    private List<object> _inventoryObjects= new List<object>();
 
     //16
     [FormerlySerializedAs("_speed")][SerializeField] private float _playerSpeed;
@@ -71,4 +71,5 @@ public class CleanCode : MonoBehaviour
     {
         
     }
+    */
 }
