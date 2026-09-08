@@ -1,5 +1,5 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
 public class CubeMovement : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class CubeMovement : MonoBehaviour
     {
         if (Math.Abs(transform.position.x) > distance)
         {
-            dir*=-1;
+            dir *= -1;
         }
         Vector3 moveDirection = new Vector3(speed * dir, 0, 0);
 
