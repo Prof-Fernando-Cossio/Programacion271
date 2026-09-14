@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class MainPlayer  :   MonoBehaviour 
+public partial class MainPlayer  :   MonoBehaviour 
 {
-    public void paoloclase()
+    public void PaoloClass()
     {
         Debug.Log("paolo aqui escribiendo");
     }
