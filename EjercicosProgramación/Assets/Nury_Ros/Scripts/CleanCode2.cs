@@ -10,6 +10,13 @@ public class CleanCode2 : MonoBehaviour
 
     }
 
+    /*
+    public void TakeDamage(int damageAmount)
+    {
+        _currenthealth=
+    }
+    */
+
     //2
     public bool IsPlayerAlive(float playerLife)
     {
