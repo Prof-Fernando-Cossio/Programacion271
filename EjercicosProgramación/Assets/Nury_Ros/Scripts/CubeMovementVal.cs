@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CubeMovement : MonoBehaviour
+public class CubeMovementVal : MonoBehaviour
 {
     public Transform point_a,point_b;
     public int speed=2;

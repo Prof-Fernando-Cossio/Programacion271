@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CleanCode3 : MonoBehaviour
 {
+    /*
     //1
     public int PlayerHealth 
     { 
@@ -32,7 +33,7 @@ public class CleanCode3 : MonoBehaviour
         set; 
     }
 
-    5//
+    //5
     public float HealthPercentage
     {
         get
@@ -186,10 +187,11 @@ public class CleanCode3 : MonoBehaviour
 
     //20
     public bool IsCharacterRunning
-{
-    get
     {
-        return _rigidbody.velocity.magnitude > 0;
+        get
+        {
+            return _rigidbody.velocity.magnitude > 0;
+        }
     }
-}
+    */
 }

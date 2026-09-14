@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CleanCode2 : MonoBehaviour
 {
+    /*
     //1
     public void TakePlayerLife(float damagePlayer, float playerLife)
     {
@@ -15,7 +16,7 @@ public class CleanCode2 : MonoBehaviour
     {
         _currenthealth=
     }
-    */
+    
 
     //2
     public bool IsPlayerAlive(float playerLife)
@@ -67,7 +68,7 @@ public class CleanCode2 : MonoBehaviour
     
     
 
-    /*//6.5
+    //6.5
     public void EnenyCount2(int enemiesSpawn)
     {
         int currentEnemies=0;
@@ -79,7 +80,7 @@ public class CleanCode2 : MonoBehaviour
         }
         Debug.Log($"Current enemies:{currentEnemies}");
     }
-    */
+    
 
     //7
     public GameObject ClosestEnemy(List <GameObject> enemies, Vector3 playerPosition)
@@ -142,7 +143,7 @@ public class CleanCode2 : MonoBehaviour
     //11
     public bool TryConvertToInt(string text, out int value)
     {
-        bool conversionSuccessful= int.Try....;
+        //bool conversionSuccessful= int.Try....;
         Debug.Log("Conversion successful");
         
         return conversionSuccessful;
@@ -212,6 +213,7 @@ public class CleanCode2 : MonoBehaviour
         rigidbody.AddForce(direction*force);
         Debug.Log("Force applied");
     }
+    */
 
 }
 
