@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class Item
+public class ItemAlex
 {
     public ItemData ItemData;
 

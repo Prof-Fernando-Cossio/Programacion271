@@ -5,7 +5,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
 
-    public List<Item> inventory = new List<Item>();
+    public List<ItemAlex> inventory = new List<ItemAlex>();
 
     [Header("Debug")]
     public ItemData testItemData;
@@ -35,7 +35,7 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(ItemData a, int b)
     {
-        foreach (Item item in inventory)
+        foreach (ItemAlex item in inventory)
         {
             if(item.ItemData.itemName == a.itemName)
             {
@@ -44,6 +44,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        inventory.Add(new Item { ItemData = a, itemQuantity = b });
+        inventory.Add(new ItemAlex { ItemData = a, itemQuantity = b });
     }
 }

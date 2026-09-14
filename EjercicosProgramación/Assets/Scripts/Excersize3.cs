@@ -25,7 +25,7 @@ public class Excersize3 : MonoBehaviour
     private int _inventoryCount;
     private int _maxInventory;
     private Rigidbody _rigidbody;
-    private List<Item> _inventoryItems=new List<Item>();
+    private List<ItemAlex> _inventoryItems=new List<ItemAlex>();
     private Rigidbody _character;
 
 
@@ -68,9 +68,8 @@ public class Excersize3 : MonoBehaviour
     public Vector3 CurrentPosition => transform.position;
     //19
     //public List<Item> ReadOnlyInventoryItems { get; } = _inventoryItems;
-    public IReadOnlyList<Item> ReadOnlyInventoryItems => _inventoryItems;
+    public IReadOnlyList<ItemAlex> ReadOnlyInventoryItems => _inventoryItems;
     //20
     public bool IsRunning=>_character.linearVelocity.magnitude > 0;
 }
 
-public class Item{}

@@ -20,7 +20,7 @@ public class InventoryManagerUI : MonoBehaviour
         }
 
         //1. Create UI elements for each item in the inventory
-        foreach(Item item in InventoryManager.Instance.inventory)
+        foreach(ItemAlex item in InventoryManager.Instance.inventory)
         {
             GameObject newItemSlot = Instantiate(itemSlotPrefab, inventoryContainer);
 
