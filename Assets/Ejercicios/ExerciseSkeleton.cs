@@ -27,11 +27,39 @@ public class ExerciseSkeleton : MonoBehaviour
     // 1. Determina si el número entero es par o impar. Muestra el resultado.
     // Resultado esperado: false (true indica que el número es par).
     // Ejemplo: "7 es impar".
+    // returnear el resultado - mandarlo en debug
     private bool IsEven(int number = 7)
     {
 
         // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        
+        //METODO DE PROFESOR
+        bool isEven = number % 2 == 0;
+        Debug.Log(isEven ? "Par" : "Impar");
+        return isEven;
+
+
+        // isEven? es un operador terniario, es una pregunta, simepre la primera pregunta es si es "true"
+
+        /* MI METODO
+        float currentNumber;
+        bool isEven;
+
+        if(number % 2 == 0)
+        {
+            number = currentNumber;
+            isEven = true;
+        }
+        else
+        {
+            number = currentNumber;
+            isEven = false;
+        }
+
+        Debug.Log(currentNumber + ", " + isEven);
+        return currentNumber, isEven;
+
+        */
     }
 
     // 2. Muestra el mayor de los tres números. Considera que pueden ser iguales.
@@ -40,7 +68,20 @@ public class ExerciseSkeleton : MonoBehaviour
     {
 
         // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        int highestNumber = firstNumber;
+
+        if (highestNumber < secondNumber)
+        { 
+            highestNumber = secondNumber;
+        }
+        if (highestNumber < thirdNumber)
+        {
+            highestNumber = thirdNumber;
+        }
+
+        Debug.Log(highestNumber);
+        return highestNumber;
+
     }
 
     // 3. Muestra una cuenta regresiva desde el valor inicial no negativo hasta cero, un mensaje por número.
@@ -50,6 +91,7 @@ public class ExerciseSkeleton : MonoBehaviour
 
         // Escribe tu solución aquí y devuelve el resultado.
         throw new System.NotImplementedException();
+        //List<int> listOfNumbers = new List<int>();
     }
 
     // 4. Recorre el arreglo y muestra la suma de todos sus elementos.
@@ -57,10 +99,19 @@ public class ExerciseSkeleton : MonoBehaviour
     // Ejemplo: "La suma es 19".
     private int CalculateSum(int[] numbers = null)
     {
+        int totalOfNumbers = 0;
+
         if (numbers == null) { numbers = new int[] { 3, 5, 2, 8, 1 }; }
 
+
         // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        foreach(int number in numbers)
+        {
+            totalOfNumbers += number;
+        }
+
+        Debug.Log($"La suma es: {totalOfNumbers}");
+        return totalOfNumbers;
     }
 
     // 5. Busca el objetivo en el arreglo y muestra si se encuentra o no.
@@ -70,7 +121,22 @@ public class ExerciseSkeleton : MonoBehaviour
         if (numbers == null) { numbers = new int[] { 4, 9, 2, 7 }; }
 
         // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        bool isCorrectNumber = false;
+
+        foreach(int number in numbers)
+        {
+            if(number == target)
+            {
+                return isCorrectNumber = true;
+            }
+            else
+            {
+                return isCorrectNumber = false;
+            }
+        }
+
+        Debug.Log(isCorrectNumber);
+        return isCorrectNumber;
     }
 
     // 6. Cuenta cuántas veces aparece "Ana" y muestra el resultado.
