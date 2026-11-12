@@ -29,27 +29,43 @@ public class ExerciseSkeleton : MonoBehaviour
     // Ejemplo: "7 es impar".
     private bool IsEven(int number = 7)
     {
-
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        bool result = number % 2 == 0;
+        Debug.Log(result ? "Es par" : "es impar");
+        return result;
     }
 
     // 2. Muestra el mayor de los tres números. Considera que pueden ser iguales.
     // Resultado esperado: 12
     private int FindLargestOfThree(int firstNumber = 12, int secondNumber = 12, int thirdNumber = 5)
     {
-
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        if (firstNumber >= secondNumber && firstNumber >= thirdNumber)
+        {
+            Debug.Log(firstNumber);
+            return firstNumber;
+        } else if (secondNumber>=thirdNumber)
+        {
+            Debug.Log(secondNumber);
+            return secondNumber;
+        }
+        else
+        {
+            Debug.Log(thirdNumber);
+            return thirdNumber;
+        }
+        throw new System.Exception();
     }
 
     // 3. Muestra una cuenta regresiva desde el valor inicial no negativo hasta cero, un mensaje por número.
     // Resultado esperado: [5, 4, 3, 2, 1, 0]
     private List<int> CreateCountdown(int start = 5)
     {
-
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        List<int> numberList = new List<int>();
+        for(int i = start; i > -1; i--)
+        {
+            numberList.Add(i);
+            Debug.Log(i);
+        }
+        return numberList;
     }
 
     // 4. Recorre el arreglo y muestra la suma de todos sus elementos.
@@ -59,8 +75,12 @@ public class ExerciseSkeleton : MonoBehaviour
     {
         if (numbers == null) { numbers = new int[] { 3, 5, 2, 8, 1 }; }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        int counter = 0;
+        for(int i = 0; i < numbers.Length;i++)
+        {
+            counter += numbers[i];
+        }
+        return counter;
     }
 
     // 5. Busca el objetivo en el arreglo y muestra si se encuentra o no.
@@ -69,8 +89,11 @@ public class ExerciseSkeleton : MonoBehaviour
     {
         if (numbers == null) { numbers = new int[] { 4, 9, 2, 7 }; }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        for (int i=0;i<numbers.Length;i++)
+        {
+            if (numbers[i] == target) { return true; }
+        }
+        return false;
     }
 
     // 6. Cuenta cuántas veces aparece "Ana" y muestra el resultado.
@@ -79,8 +102,13 @@ public class ExerciseSkeleton : MonoBehaviour
     {
         if (names == null) { names = new string[] { "Ana", "Luis", "Ana", "Sofía" }; }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        string nameToCheck = "Ana";
+        int counter = 0;
+        for(int i = 0; i < names.Length; i++)
+        {
+            if (names[i] == nameToCheck) { counter++; }
+        }
+        return counter;
     }
 
     // 7. Muestra cada número en orden inverso, sin modificar la lista original.
@@ -89,8 +117,12 @@ public class ExerciseSkeleton : MonoBehaviour
     {
         if (numbers == null) { numbers = new List<int> { 1, 2, 3 }; }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        List<int> reversedList = new List<int>();
+        for(int i = numbers.Count-1; i >= 0; i--)
+        {
+            reversedList.Add(numbers[i]);
+        }
+        return reversedList;
     }
 
     // 8. Recorre el diccionario y muestra cada objeto con su cantidad.
@@ -100,8 +132,13 @@ public class ExerciseSkeleton : MonoBehaviour
     {
         if (inventory == null) { inventory = new Dictionary<string, int> { { "Pociones", 3 }, { "Llaves", 2 }, { "Espadas", 1 } }; }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        Dictionary<string, int> inventoryDict = new Dictionary<string, int>();
+        foreach(var element in inventory)
+        {
+            Debug.Log($"{element.Key}: {element.Value}");
+            inventoryDict.Add(element.Key,element.Value);
+        }
+        return inventoryDict;
     }
 
     // 9. Encuentra y muestra el número mayor de la lista no vacía.
@@ -110,8 +147,12 @@ public class ExerciseSkeleton : MonoBehaviour
     {
         if (numbers == null) { numbers = new List<int> { -4, 12, 7, 12, 3 }; }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        int largest = numbers[0];
+        for(int i = 1; i < numbers.Count; i++)
+        {
+            if (numbers[i] > largest) { largest = numbers[i]; }
+        }
+        return largest;
     }
 
     // 10. Agrega los números sin repetir a la lista uniqueNumbers y muestra sus elementos.
@@ -119,11 +160,29 @@ public class ExerciseSkeleton : MonoBehaviour
     // Conserva el orden de la primera aparición. Ejemplo: 3, 1, 2, 4.
     private List<int> GetUniqueNumbers(List<int> numbers = null)
     {
+        bool isRepeated;
         if (numbers == null) { numbers = new List<int> { 3, 1, 3, 2, 1, 4 }; }
         List<int> uniqueNumbers = new List<int>();
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        for(int i = 0; i < numbers.Count; i++)
+        {
+            if (uniqueNumbers.Count == 0) {
+                uniqueNumbers.Add(numbers[i]);
+            } else
+            {
+                isRepeated = false;
+                for(int j = 0; j < uniqueNumbers.Count; j++)
+                {
+                    if (uniqueNumbers[j] == numbers[i])
+                    {
+                        isRepeated = true;
+                        break;
+                    }
+                }
+                if (!isRepeated) { uniqueNumbers.Add(numbers[i]); }
+            }
+        }
+        return uniqueNumbers;
     }
 
     #endregion Methods
