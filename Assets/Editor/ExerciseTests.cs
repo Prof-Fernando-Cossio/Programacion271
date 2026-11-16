@@ -64,7 +64,7 @@ public class ExerciseTests
     [Test]
     public void ContainsNumber_SearchesDifferentArrays()
     {
-        Assert.IsTrue(RunExercise<bool>("ContainsNumber", new int[] { 4, 9, 2, 7 }, 2));
+        Assert.IsTrue(RunExercise<bool>("ContainsNumber", new int[] { 4, 9, 2, 7 }, 2));    
         Assert.IsFalse(RunExercise<bool>("ContainsNumber", new int[] { 4, 9, 7 }, 2));
         Assert.IsFalse(RunExercise<bool>("ContainsNumber", new int[0], 0));
         Assert.IsTrue(RunExercise<bool>("ContainsNumber", new int[] { -3, 4 }, -3));
