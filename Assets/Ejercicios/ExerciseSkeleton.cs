@@ -27,29 +27,51 @@ public class ExerciseSkeleton : MonoBehaviour
     // 1. Determina si el número entero es par o impar. Muestra el resultado.
     // Resultado esperado: false (true indica que el número es par).
     // Ejemplo: "7 es impar".
+    //debug y return
     private bool IsEven(int number = 7)
     {
-
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        bool isEven =number%2==0;
+        //variable con '?' es un operador terneario (esto pasa en caso de true:ese seria en caso de false)
+        Debug.Log(isEven? "es par":"es impar");
+        return isEven;
     }
 
     // 2. Muestra el mayor de los tres números. Considera que pueden ser iguales.
     // Resultado esperado: 12
     private int FindLargestOfThree(int firstNumber = 12, int secondNumber = 12, int thirdNumber = 5)
     {
+        int largest=firstNumber;
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        if (largest>=secondNumber && largest>=thirdNumber)
+        {
+            return largest=firstNumber;
+            Debug.Log(firstNumber+" es el mayor");
+        }
+        else if (secondNumber>largest && secondNumber>=thirdNumber)
+        {
+            return largest=secondNumber;
+            Debug.Log(secondNumber+" es el mayor");
+        }
+        else 
+        {
+            return largest=thirdNumber;
+            Debug.Log(thirdNumber+" es el mayor");
+        }
     }
 
     // 3. Muestra una cuenta regresiva desde el valor inicial no negativo hasta cero, un mensaje por número.
     // Resultado esperado: [5, 4, 3, 2, 1, 0]
     private List<int> CreateCountdown(int start = 5)
     {
+        List<int> countDown= new List<int>();
+        for (int i=start; i>=0; i--)
+        {
+            countDown.Add(i);
+        }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        Debug.Log(countDown);
+
+        return countDown;
     }
 
     // 4. Recorre el arreglo y muestra la suma de todos sus elementos.
@@ -59,18 +81,40 @@ public class ExerciseSkeleton : MonoBehaviour
     {
         if (numbers == null) { numbers = new int[] { 3, 5, 2, 8, 1 }; }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        int finalAdd=0;
+
+        for (int i=0;i<numbers.Length;i++)
+        {
+            finalAdd+=numbers[i];
+        }
+
+        Debug.Log(finalAdd);
+
+        return finalAdd;
     }
 
     // 5. Busca el objetivo en el arreglo y muestra si se encuentra o no.
     // Resultado esperado: true (indica que se encontró el número).
     private bool ContainsNumber(int[] numbers = null, int target = 2)
     {
-        if (numbers == null) { numbers = new int[] { 4, 9, 2, 7 }; }
+       if (numbers == null) { numbers = new int[] { 4, 9, 2, 7 };}
+        bool sameNumber=false;
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        for (int i=0;i<numbers.Length;i++)
+        {
+            if (target==numbers[i])
+            {
+                sameNumber=true;
+                Debug.Log(sameNumber);
+                return sameNumber;
+            }
+            else 
+            {
+                sameNumber=false;
+            }
+        }
+        
+        return sameNumber;
     }
 
     // 6. Cuenta cuántas veces aparece "Ana" y muestra el resultado.
@@ -78,9 +122,17 @@ public class ExerciseSkeleton : MonoBehaviour
     private int CountNames(string[] names = null)
     {
         if (names == null) { names = new string[] { "Ana", "Luis", "Ana", "Sofía" }; }
+        int anaRepetition=0;
+        for (int i=0;i<names.Length;i++)
+        {
+            if (names[i]=="Ana")
+            {
+                anaRepetition++;
+            }
+        }
+        Debug.Log(anaRepetition);
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        return anaRepetition;
     }
 
     // 7. Muestra cada número en orden inverso, sin modificar la lista original.
@@ -89,8 +141,15 @@ public class ExerciseSkeleton : MonoBehaviour
     {
         if (numbers == null) { numbers = new List<int> { 1, 2, 3 }; }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        List<int> reorderedList= new List<int>();
+
+        for (int i=numbers.Count-1;i>=0;i--)
+        {
+            reorderedList.Add(numbers[i]);
+        }
+        Debug.Log(reorderedList);
+
+        return reorderedList;
     }
 
     // 8. Recorre el diccionario y muestra cada objeto con su cantidad.
@@ -99,9 +158,13 @@ public class ExerciseSkeleton : MonoBehaviour
     private Dictionary<string, int> GetInventory(Dictionary<string, int> inventory = null)
     {
         if (inventory == null) { inventory = new Dictionary<string, int> { { "Pociones", 3 }, { "Llaves", 2 }, { "Espadas", 1 } }; }
+        
+        foreach (KeyValuePair<string, int> item in inventory)
+        {
+           Debug.Log(item.Key+ item.Value);
+        }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        return inventory;
     }
 
     // 9. Encuentra y muestra el número mayor de la lista no vacía.
@@ -109,9 +172,18 @@ public class ExerciseSkeleton : MonoBehaviour
     private int FindLargestInList(List<int> numbers = null)
     {
         if (numbers == null) { numbers = new List<int> { -4, 12, 7, 12, 3 }; }
+        int largest=numbers[0];
+        
+        for(int i=0;i<numbers.Count;i++)
+        {
+             if (numbers[i]>largest)
+            {
+                largest = numbers[i];
+            }
+        }
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        Debug.Log(largest+" es el mayor");
+        return largest;
     }
 
     // 10. Agrega los números sin repetir a la lista uniqueNumbers y muestra sus elementos.
@@ -122,8 +194,21 @@ public class ExerciseSkeleton : MonoBehaviour
         if (numbers == null) { numbers = new List<int> { 3, 1, 3, 2, 1, 4 }; }
         List<int> uniqueNumbers = new List<int>();
 
-        // Escribe tu solución aquí y devuelve el resultado.
-        throw new System.NotImplementedException();
+        for (int i=0;i<numbers.Count;i++)
+        {
+            if (uniqueNumbers.Contains(numbers[i]))
+            {
+                Debug.Log("Ya existe");
+            }
+            else
+            {
+                uniqueNumbers.Add(numbers[i]);
+            }
+        }
+
+        Debug.Log(uniqueNumbers);
+        return uniqueNumbers;
+
     }
 
     #endregion Methods
