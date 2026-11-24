@@ -12,7 +12,12 @@ public class ExerciseSetTwo : MonoBehaviour
     {
         if (numbers == null) { numbers = new int[] { 4, -1, 0, 8, 2 }; }
 
-        throw new NotImplementedException();
+        int counter=0;
+        for(int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i] > 0) { counter++; }
+        }
+        return counter;
     }
 
     // 2. Calcula el factorial de un entero no negativo. El factorial de 0 es 1.
@@ -20,7 +25,13 @@ public class ExerciseSetTwo : MonoBehaviour
     // Resultado esperado: 120
     private int CalculateFactorial(int number = 5)
     {
-        throw new NotImplementedException();
+        //if (number < 0) { throw Exception; }
+        int x=1;
+        for(int i = 2; i <= number; i++)
+        {
+            x *= i;
+        }
+        return x;
     }
 
     // 3. Cuenta las vocales inglesas (a, e, i, o, u) de un texto, sin distinguir mayúsculas.
@@ -28,7 +39,15 @@ public class ExerciseSetTwo : MonoBehaviour
     // Resultado esperado: 5
     private int CountVowels(string text = "Murcielago")
     {
-        throw new NotImplementedException();
+        int counts=0;
+        foreach(char caracter in text)
+        {
+            if(caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u' || caracter == 'A' || caracter == 'E' || caracter == 'I' || caracter == 'O' || caracter == 'U')
+            {
+                counts++;
+            }
+        }
+        return counts;
     }
 
     // 4. Comprueba si un texto es palíndromo, leyendo igual de izquierda a derecha y viceversa.
@@ -37,7 +56,13 @@ public class ExerciseSetTwo : MonoBehaviour
     // Resultado esperado: true
     private bool IsPalindrome(string text = "radar")
     {
-        throw new NotImplementedException();
+        bool isActuallyPalindrome = true;
+        for(int i = 0; i < text.Length / 2; i++)
+        {
+            if (text[i] != text[text.Length-(i + 1)]) { isActuallyPalindrome = false; }
+            Debug.Log(text[i] + " " + text[text.Length-(i + 1)]);
+        }
+        return isActuallyPalindrome;
     }
 
     // 5. Devuelve una lista nueva con los números pares de la lista recibida, en su orden original.
@@ -47,7 +72,12 @@ public class ExerciseSetTwo : MonoBehaviour
     {
         if (numbers == null) { numbers = new List<int> { 1, 2, 3, 4, 2 }; }
 
-        throw new NotImplementedException();
+        List<int> evenNumbers = new List<int>();
+        foreach(int number in numbers)
+        {
+            if (number % 2 == 0) { evenNumbers.Add(number); }
+        }
+        return evenNumbers;
     }
 
     // 6. Atiende a la primera persona de la cola: quítala y devuelve su nombre.
@@ -57,7 +87,10 @@ public class ExerciseSetTwo : MonoBehaviour
     {
         if (people == null) { people = new Queue<string>(new[] { "Ana", "Luis", "Sofía" }); }
 
-        throw new NotImplementedException();
+        if (people.Count == 0) { return null; }
+        string person = people.Peek();
+        people.Dequeue();
+        return person;
     }
 
     // 7. Agrega la persona indicada al final de la cola y devuelve esa misma cola.
@@ -67,7 +100,8 @@ public class ExerciseSetTwo : MonoBehaviour
     {
         if (people == null) { people = new Queue<string>(new[] { "Ana", "Luis" }); }
 
-        throw new NotImplementedException();
+        people.Enqueue(person);
+        return people;
     }
 
     // 8. Cuenta cuántas veces aparece el número objetivo en el arreglo.
@@ -76,7 +110,12 @@ public class ExerciseSetTwo : MonoBehaviour
     {
         if (numbers == null) { numbers = new int[] { 2, 4, 2, 1, 2 }; }
 
-        throw new NotImplementedException();
+        int counter=0;
+        foreach (int number in numbers)
+        {
+            if (number == target) { counter++; }
+        }
+        return counter;
     }
 
     // 9. Suma los números enteros desde 1 hasta el número indicado, incluyéndolo.
@@ -84,7 +123,9 @@ public class ExerciseSetTwo : MonoBehaviour
     // Resultado esperado: 15
     private int SumUpTo(int number = 5)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+        for(int i = 0; i <= number; i++) { sum += i; }
+        return sum;
     }
 
     // 10. Devuelve una nueva cadena con los caracteres del texto en orden inverso.
@@ -92,7 +133,10 @@ public class ExerciseSetTwo : MonoBehaviour
     // Resultado esperado: "aloH"
     private string ReverseText(string text = "Hola")
     {
-        throw new NotImplementedException();
+        char[] chars = text.ToCharArray();
+        Array.Reverse(chars);
+        string reversedText=new string(chars);
+        return reversedText;
     }
 
     #endregion Methods
